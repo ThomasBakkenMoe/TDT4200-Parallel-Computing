@@ -1,0 +1,3 @@
+/home/thomas/Documents/School/TDT4200-Parallel-Computing/Assignment0/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/thomas/Documents/School/TDT4200-Parallel-Computing/Assignment0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/thomas/Documents/School/TDT4200-Parallel-Computing/Assignment0/cmake-build-debug/CMakeFiles/Assignment0.dir
