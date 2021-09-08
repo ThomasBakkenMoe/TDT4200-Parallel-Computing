@@ -47,6 +47,17 @@ int main(int argc, char** argv)
 
     //TODO 4 - loop
     //Write your loop here
+    int i;
+    for(i = 0; i < (width * height); i++) {
+
+        pixel output_pixel;
+        output_pixel.r = (pixels_1[i].r + pixels_2[i].r) / 2;
+        output_pixel.g = (pixels_1[i].g + pixels_2[i].g) / 2;
+        output_pixel.b = (pixels_1[i].b + pixels_2[i].b) / 2;
+        output_pixel.a = (pixels_1[i].a + pixels_2[i].a) / 2;
+
+        pixels_out[i] = output_pixel;
+    }
 
     stbi_write_png("output.png", width, height, STBI_rgb_alpha, pixels_out, sizeof(pixel) * width);
 
