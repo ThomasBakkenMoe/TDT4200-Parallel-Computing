@@ -46,7 +46,6 @@ int main(int argc, char** argv)
     pixel* pixels_out = (pixel *) malloc(sizeof(pixel) * (width * height));
 
     //TODO 4 - loop
-    //Write your loop here
     int i;
     for(i = 0; i < (width * height); i++) {
 
@@ -62,6 +61,10 @@ int main(int argc, char** argv)
     stbi_write_png("output.png", width, height, STBI_rgb_alpha, pixels_out, sizeof(pixel) * width);
 
     //TODO 5 - free
+
+    free(pixels_1);
+    free(pixels_2);
+    free(pixels_out);
 
     return 0;
 }
