@@ -69,6 +69,10 @@ int main(int argc, char** argv)
 //TODO 1 - init
     int comm_size;
     int rank;
+
+    MPI_Init(NULL, NULL);
+    MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 //TODO END
 
 
@@ -80,11 +84,14 @@ int main(int argc, char** argv)
 
 
 //TODO 2 - broadcast
-	pixels_in = (pixel *) stbi_load(argv[1], &in_width, &in_height, &channels, STBI_rgb_alpha);
-	if (pixels_in == NULL) {
-		exit(1);
-	}
-	printf("Image dimensions: %dx%d\n", in_width, in_height);
+    if (rank == 0) {
+        pixels_in = (pixel *) stbi_load(argv[1], &in_width, &in_height, &channels, STBI_rgb_alpha);
+        if (pixels_in == NULL) {
+            exit(1);
+        }
+        printf("Image dimensions: %dx%d\n", in_width, in_height);
+    }
+
 //TODO END
 
 
@@ -128,6 +135,7 @@ int main(int argc, char** argv)
 
 
 //TODO 1 - init
+    MPI_Finalize();
 //TODO END
 	return 0;
 }
